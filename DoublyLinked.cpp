@@ -24,7 +24,7 @@ void traverse(NODE* head)
 }
 NODE* insertbet(NODE*head,int i,int n)
 {
-    
+    /* This Function is used to Insert a Node in between the Linked List*/
 
     NODE* ptr;
     ptr=(NODE*)malloc(sizeof(NODE));
@@ -42,6 +42,8 @@ NODE* insertbet(NODE*head,int i,int n)
 }
 NODE* delbet(NODE* head,int i)
 {
+    /* This Function is used to Delete a Node from in between the Linked List*/
+
     NODE*ptr=(NODE*)malloc(sizeof(NODE));
     int j=0;
     while(j<i-1)
@@ -57,7 +59,7 @@ NODE* delbet(NODE* head,int i)
 }
 int main()
 {
-    NODE *head,*first,*temp;
+    NODE *head,*first,*temp;    // Creating Doubly Linked Lists
     first=NULL;
     head=NULL;
     cout<<"Enter the elements: \n";
@@ -78,10 +80,10 @@ int main()
         }
     }
     head=first;
-    head=insertbet(head,3,55);
+    head=insertbet(head,3,55);  // Inserting A Node in between the existing Linked List
     head=first;
-    head=delbet(head,3);
+    head=delbet(head,3);        // Deleting A Node from in between the existing Linked List
     head=first;
-    traverse(head);
+    traverse(head);             // Traversing the Linked List
     return 0;
 }
