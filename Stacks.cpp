@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-struct stack
+struct stack    // Implementing Stacks using structure
 {
     int size;
     int top;
@@ -11,6 +11,8 @@ typedef struct stack Stack;
 
 int isEmpty(Stack *s)
 {
+    /* This Function checks if the struct stack pointer is empty or not */
+
     if(s->top==-1)
     {
         return 1;
@@ -19,6 +21,8 @@ int isEmpty(Stack *s)
 }
 int isFull(Stack *s)
 {
+    /* This Function checks if the struct stack pointer is full or not */
+
     if(s->top == (s->size) - 1)
     {
         return 1;
@@ -27,6 +31,8 @@ int isFull(Stack *s)
 }
 void push(Stack*s)
 {
+    /* This Function is used to Push an Element to the Stack */
+
     if(isFull(s))
     {
         cout<<"\nStack Overflow.\n";
@@ -41,6 +47,8 @@ void push(Stack*s)
 }
 void pop(Stack*s)
 {
+    /* This Element is used to remove/delete/pop an Element from the Stack (LIFO) */
+
     if(isEmpty(s))
     {
         cout<<"\nStack Underflow.\n";
@@ -54,6 +62,8 @@ void pop(Stack*s)
 }
 void peek(Stack*s)
 {
+    /* This Function is used to Display the Element at a desired index */
+
     int val,ans;
     cout<<"\nEnter the Position for Peeking: ";
     cin>>val;
@@ -68,16 +78,22 @@ void peek(Stack*s)
 }
 int StackTop(Stack*s)
 {
+    /* This Function returns the top element of the Stack */
+
     return s->arr[s->top];
     
 }
 int StackBottom(Stack*s)
 {
+    /* This Function returns the Bottom Element of the Stack */
+
     return s->arr[0];
     
 }
 void display(Stack*s)
 {
+    /* This Function is used display the Stack */
+
     cout<<"\nElements in the Stack are: ";
     for(int j=s->top;j>=0;--j)
     {
@@ -92,6 +108,8 @@ int main()
     cin >> s->size;
     s->arr = new int(s->size);
     int c,i=1;
+
+    // Menu Driven: 
     while(i){
     cout<<"\nSelect from the following: \n1. Push Element\n2. Pop Element\n3. Peek through the Stack\n4. Display Stack Top Element\n5. Display Stack Bottom Element\n6. Display the Stack\n7. Exit the program\n\nEnter your Choice: ";
     cin>>c;
