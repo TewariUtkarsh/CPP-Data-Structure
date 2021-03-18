@@ -1,22 +1,25 @@
 #include<iostream>
 using namespace std;
 
-int count = 0;
+// int count = 0;
 struct Node 
 {
-    int size,front,rear,*arr;
+    /* This Struct contains the Queue(*arr), Size of the Queue(size) and two index variables (front and rear) for pointing the First and Last Element of the Queue */
+    int size,front,rear,*arr, count;   
 };
 typedef struct Node NODE;
 
 void Enqueue(NODE *q)
 {
+    /* This Funciton is Used to Add an Element to the Queue */
+
     if((q->size)-1 == q->rear)
     {
         cout<<"\nQueue Overflow\n";
     }
     else
     {
-        ++count;
+        ++(q->count);
         ++(q->rear);
         cout<<"\nEnter the Element: ";
         cin>>q->arr[q->rear];
@@ -25,6 +28,8 @@ void Enqueue(NODE *q)
 }
 void Dequeue(NODE *q)
 {
+    /* This Function is used to Remove an Element from the Queue */
+
     if(q->rear == -1)
     {
         cout<<"\nQueue Underflow\n";
@@ -38,6 +43,8 @@ void Dequeue(NODE *q)
 }
 void Display(NODE *q)
 {
+    /* This Function is Used to Display the Complete Queue */
+
     if(q->rear == q->front)
     {
         cout<<"\nQueue Empty!!\n";
@@ -53,7 +60,7 @@ void Display(NODE *q)
 }
 int main()
 {
-    NODE *q = new NODE;
+    NODE *q = new NODE; 
     q->front = q->rear = -1;
     cout<<"\nEnter the size of the Queue: ";
     cin>>q->size;
