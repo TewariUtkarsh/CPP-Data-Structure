@@ -3,11 +3,12 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    /* This Stuct contains the Data(Element), struct pointer to link the Stack and count(to count the number the Elements) */
+    int data, count=-1;
     struct Node* next;
 };
 typedef struct Node NODE;
-int count=-1;
+// int count=-1;
 bool isEmpty(NODE*top)
 {
     if(top==NULL)
@@ -28,7 +29,7 @@ NODE* Push(NODE*top)
         ptr->next=top;
         top=ptr;
         cout<<"\n"<<ptr->data<<" Pushed to the Stack Successfully.\n";
-        ++count;
+        ++(top->count);
         return top;
     }
     return 0;
@@ -44,7 +45,7 @@ NODE* Pop(NODE*top)
         top=top->next;
         cout<<"\n"<<ptr->data<<" Popped out from the Stack Successfully.\n";
         free(ptr);
-        --count;
+        --(top->count);
         return top;
     }
     return 0;
@@ -54,10 +55,10 @@ void Peek(NODE*top)
     int pos;
     cout<<"\nEnter the Position to be Peeked: ";
     cin>>pos;
-    int val=count-pos+1;
+    int val=(top->count)-pos+1;
     if(val>=0){
     NODE*ptr=top;
-    int i=count;
+    int i=(top->count);
     while(i>val){
         ptr=ptr->next;
         --i;
