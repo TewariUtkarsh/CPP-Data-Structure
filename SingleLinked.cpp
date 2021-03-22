@@ -4,6 +4,7 @@ using namespace std;
 
 struct node
 {
+    /* This Stucture contains integer varaible data (to store the data of the Node) and *next(struct pointer which points to the Next Node in the Linked List) */
     int data;
     struct node *next;
 };
