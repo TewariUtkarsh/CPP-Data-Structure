@@ -3,6 +3,7 @@ using namespace std;
 
 struct node
 {
+    /* This Structure contains of variable Data (to Store the data in the Node), *next(struct pointer which points to the next node) and *prev(struct pointer which points to the previous Node) */
     int data;
     struct node* next;
     struct node* prev;
