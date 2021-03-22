@@ -11,6 +11,8 @@ typedef struct Node NODE;
 // int count=-1;
 bool isEmpty(NODE*top)
 {
+    /* This Function is used to Check if the Stack is Empty or not*/
+    
     if(top==NULL)
         return true;
 
@@ -18,6 +20,8 @@ bool isEmpty(NODE*top)
 }
 NODE* Push(NODE*top)
 {
+    /* This Function is used Push/Add an Element to the Stack */
+    
     NODE *ptr= new NODE;
     if(ptr==NULL)
         cout<<"\nStack Overflow.\n";
@@ -36,6 +40,8 @@ NODE* Push(NODE*top)
 }
 NODE* Pop(NODE*top)
 {
+    /* This Function is used to Pop/Remove an Element fromm the Stack */
+    
     if(isEmpty(top)==true)
         cout<<"\nStack Underflow.\n";
 
@@ -52,6 +58,8 @@ NODE* Pop(NODE*top)
 }
 void Peek(NODE*top)
 {
+    /* This Function is used to Print the Element at a desired location */
+    
     int pos;
     cout<<"\nEnter the Position to be Peeked: ";
     cin>>pos;
@@ -75,6 +83,8 @@ int main()
 {
     NODE*head=NULL;  //top=head
     int i=1;
+    
+    // Menu Driven
     while(i)
     {
         cout<<"\nWelcome to the Program of Implementation of Stacks using Linked List\nSelect from the following:\n1. Push \n2. Pop \n3. Peek\n4. Exit\nEnter your choice: ";
